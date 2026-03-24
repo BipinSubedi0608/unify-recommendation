@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Keep repo clean from build/training noise
+data/
+scripts/
+integration/
+[BUILD_STATUS.md](http://_vscodecontentref_/0)
+[DEPLOYMENT_GUIDE.md](http://_vscodecontentref_/1)
+[INTEGRATION_GUIDE.md](http://_vscodecontentref_/2)
+[PRE_DEPLOYMENT_CHECKLIST.md](http://_vscodecontentref_/3)
+[PROJECT_SUMMARY.md](http://_vscodecontentref_/4)
+[QUICK_REFERENCE.md](http://_vscodecontentref_/5)
+[RAILWAY_DEPLOYMENT.md](http://_vscodecontentref_/6)
+
+# Deployment platform file not needed for Railway-only repo
+[render.yaml](http://_vscodecontentref_/7)

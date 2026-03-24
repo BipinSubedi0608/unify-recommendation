@@ -1,0 +1,15 @@
+app:
+  name: unify-recommender
+  description: University Recommendation Engine
+  version: "1.0.0"
+
+runtime: python-3.11
+
+build:
+  - pip install -r requirements.txt
+
+run:
+  cmd: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+
+env:
+  PYTHONUNBUFFERED: 1

@@ -1,0 +1,35 @@
+# Docker
+__pycache__/
+*.pyc
+.dockerignore
+.docker
+
+# Python
+venv/
+.venv
+*.egg-info/
+dist/
+build/
+
+# Data (optional - exclude large files from image)
+data/raw/
+data/training/
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.production
