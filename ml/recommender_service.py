@@ -110,13 +110,13 @@ def semantic_search(query: str, search_type: str = "both", top_n: int = 10) -> l
     vectorizer = loader.vectorizer
 
     universities = model["universities"]
-    query_vec = vectorizer.transform([query]).toarray()[0]
+    query_vec = vectorizer.transform([query]).toarray()[0] # type: ignore
 
     results = []
 
     if search_type in ("both", "universities"):
         uni_matrix = model["uni_matrix"].toarray()
-        uni_scores = cosine_similarity([query_vec], uni_matrix)[0]
+        uni_scores = cosine_similarity([query_vec], uni_matrix)[0] # type: ignore
 
         ranked_uni_indices = np.argsort(uni_scores)[::-1][:top_n]
         for idx in ranked_uni_indices:
@@ -137,8 +137,8 @@ def semantic_search(query: str, search_type: str = "both", top_n: int = 10) -> l
         for uni in universities[:100]:
             for course in uni.get("courses", []):
                 course_text = f"{course['title']} {course.get('code', '')}"
-                course_vec = vectorizer.transform([course_text]).toarray()[0]
-                score = float(cosine_similarity([query_vec], [course_vec])[0][0])
+                course_vec = vectorizer.transform([course_text]).toarray()[0] # type: ignore
+                score = float(cosine_similarity([query_vec], [course_vec])[0][0]) # type: ignore
 
                 if score > 0.01:
                     results.append(
